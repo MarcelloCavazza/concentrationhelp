@@ -155,3 +155,9 @@ yarn add express cors express-async-errors
 ```bash
 yarn add -D @types/express @types/cors
 ```
+
+15. Add typeorm, reflect-metadata and postgresql:
+
+```bash
+yarn add typeorm reflect-metadata pg
+```
