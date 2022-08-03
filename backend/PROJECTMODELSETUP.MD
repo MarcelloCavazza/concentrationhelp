@@ -47,10 +47,11 @@
 
 ```bash
 "scripts": {
-  "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
-  "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-  "lint": "eslint . --ext .ts",
-  "lint-fix": "eslint . --ext .ts --fix"
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
 }
 ```
 
@@ -141,4 +142,16 @@ mkdir -p src/modules
 mkdir -p src/shared/http
 
 mv src/server.ts src/shared/http/server.ts
+```
+
+13. Add dependencies to create the connection:
+
+```bash
+yarn add express cors express-async-errors
+```
+
+14. Add the typo:
+
+```bash
+yarn add -D @types/express @types/cors
 ```
