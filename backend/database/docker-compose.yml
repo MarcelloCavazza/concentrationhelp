@@ -1,7 +1,7 @@
-version: 'latest'
+version: '3.8'
 services:
   db:
-    container_name: databasePG
+    container_name: database
     image: postgres
     restart: always
     environment:
