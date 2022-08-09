@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
-import routes from './routes';
+import { tasks } from '@modules/tasks/infra/http/tasks.routes';
 import AppError from '@shared/errors/AppError';
 import '@shared/typeorm/typeorm';
 
@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(routes);
+app.use(tasks);
 
 app.use(
   (error: Error, request: Request, reponse: Response, next: NextFunction) => {
