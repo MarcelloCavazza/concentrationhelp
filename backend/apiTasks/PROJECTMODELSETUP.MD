@@ -161,3 +161,9 @@ yarn add -D @types/express @types/cors
 ```bash
 yarn add typeorm reflect-metadata pg
 ```
+
+16. Add jsonwebtoken and uuid:
+
+```bash
+yarn add jsonwebtoken uuid
+```
