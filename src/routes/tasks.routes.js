@@ -5,7 +5,7 @@ import { zenApi } from "../data/hooks/services/APIcall.js";
 const task = express.Router();
 
 task.get("/status", (req, res) => {
-  console.log("Status ok");
+  return res.send("Status ok");
 });
 
 task.post("/createtask", async (req, res) => {
