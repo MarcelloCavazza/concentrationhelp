@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, promises } from "node:fs";
+import { existsSync, promises } from "node:fs";
 
 import { formatDate } from "../utils/utils.js";
 let tasks = null
@@ -8,7 +8,8 @@ async function update(taskData) {
         const allowedStatus = [
             'todo',
             'doing',
-            'done'
+            'done',
+            'inactive'
         ]
         if (!existsSync('./src/db/database.json')) {
             return false
